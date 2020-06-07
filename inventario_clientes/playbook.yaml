@@ -1,0 +1,26 @@
+- name: 1 - Retornando informações do ambiente Tomcat
+  hosts: tomcat
+
+  tasks:
+    # task 1
+    - name: Retornando lista de arquivos do diretório
+      shell: ls -l
+      register: saidashell_ls
+    
+    - name: Listando os processos em execução
+      shell: ps -ef | grep tomcat
+      register: saidashell_ps
+    
+    - name: Gravando comando ls em arquivo de log local
+      copy:
+        content: "{{ saidashell_ls.stdout }}"
+        dest: "/home/andrej/Desktop/github/terraform/saidashell_ls.log"
+      delegate_to: localhost
+    
+    - name: Gravando comando ps em arquivo de log local
+      copy:
+        content: "{{ saidashell_ps.stdout }}"
+        dest: "/home/andrej/Desktop/github/terraform/saidashell_ps.log"
+      delegate_to: localhost
+    
+    
