@@ -4,7 +4,7 @@ Migração do projeto [GitHub](https://github.com/andrejesusdasilva/Python/tree/
 # Pré Requisitos
 
 * Instalar o ansible (testado com a versão 2.9.9);
-* Copiar o arquivo "hosts_tomcat"  para /etc/ansible. Salvar o arquivo playbook em algum local;
+* Copiar o arquivo "hosts_tomcat"  para /etc/ansible. Salvar o arquivo playbook.yaml em algum local;
 * Arquivo ~/.ssh/config com as entradas configuradas para que o "Jump" funcione (ainda em teste);
 
 
