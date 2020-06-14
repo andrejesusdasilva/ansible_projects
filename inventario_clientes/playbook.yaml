@@ -1,6 +1,6 @@
 - name: 1 - Retornando informações do ambiente Tomcat
-  hosts: tomcat
-
+  hosts: ops2ansible_tomcat
+  # precisa deixar dinamico a escolha do host, Jinja?
   tasks:
     # task 1
     - name: Retornando lista de arquivos do diretório
@@ -14,13 +14,13 @@
     - name: Gravando comando ls em arquivo de log local
       copy:
         content: "{{ saidashell_ls.stdout }}"
-        dest: "/home/andrej/Desktop/github/terraform/saidashell_ls.log"
+        dest: "/home/andrej/Desktop/ansible_inventory/saidashell_ls.log"
       delegate_to: localhost
     
     - name: Gravando comando ps em arquivo de log local
       copy:
         content: "{{ saidashell_ps.stdout }}"
-        dest: "/home/andrej/Desktop/github/terraform/saidashell_ps.log"
+        dest: "/home/andrej/Desktop/ansible_inventory/saidashell_ps.log"
       delegate_to: localhost
     
     

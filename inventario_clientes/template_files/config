@@ -1,0 +1,35 @@
+Host bastionserver
+Hostname 10.0.14.235
+User bastion
+IdentityFile /home/andrej/bastion.pem
+StrictHostKeyChecking no
+UserKnownHostsFile=/dev/null
+Port 22
+
+Host {{ ambiente }}
+HostName {{ gateway_ip }}
+User andre.jesus
+IdentityFile ~/ops2.pem
+ProxyCommand ssh -q -W %h:%p bastionserver
+StrictHostKeyChecking no
+UserKnownHostsFile=/dev/null
+Port 22
+
+Host {{ ambiente }}_oracle
+HostName {{ oracle }}
+User andre.jesus
+IdentityFile ~/ops2.pem
+ProxyCommand ssh -q -W %h:%p {{ ambiente }}
+StrictHostKeyChecking no
+UserKnownHostsFile=/dev/null
+Port 22
+
+Host {{ ambiente }}_tomcat
+HostName {{ tomcat }}
+User andre.jesus
+IdentityFile ~/ops2.pem
+ProxyCommand ssh -q -W %h:%p {{ ambiente }}
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile=/dev/null
+

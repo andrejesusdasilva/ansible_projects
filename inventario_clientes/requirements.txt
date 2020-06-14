@@ -1,0 +1,4 @@
+anyconfig==0.9.10
+Unipath==1.1
+paramiko==2.4.1
+jinja2==2.11.2

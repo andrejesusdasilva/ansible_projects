@@ -1,18 +1,19 @@
-# Objetivo
-Migração do projeto [GitHub](https://github.com/andrejesusdasilva/Python/tree/master/paramiko_proxycomand) para o Ansible
+# Inventário
+Migração do projeto [inventario_clientes](https://github.com/andrejesusdasilva/Python/tree/master/paramiko_proxycomand) para ansible.
 
-# Pré Requisitos
+# Pré Requisito
 
-* Instalar o ansible (testado com a versão 2.9.9);
-* Copiar o arquivo "hosts_tomcat"  para /etc/ansible. Salvar o arquivo playbook.yaml em algum local;
-* Arquivo ~/.ssh/config com as entradas configuradas para que o "Jump" funcione (ainda em teste);
-
-
+Instalar as dependencias com o comando:
+* pip3 install -r requirements.txt
 # Modo de usar
 
-* ansible-playbook -i /etc/ansible/hosts_tomcat ~/Desktop/inventario_ansible/playbook.yaml
+* Rode a classe main em python e dois arquivos serão gerados localmente, ansible_inventory.conf e config.conf. Vão ser gerados pares
+de arquivos para cada clente existente no .csv
 
+* O Conteúdo do arquivo config.conf precisa ser adicionado no arquivo ~/.ssh/config do diretório do host.
 
-# Resultado esperado
+* Copie o arquivo ansible_inventory.conf para o diretório /etc/ansible/ ou algum outro diretório de sua preferência
 
-* Arquivos de log gerado localmente, com o resultado dos comandos executados no servidor.
+* Rode o comando "ansible-playbook -i <caminho_arquivo_inventorio> <caminho_playbook.yaml>
+
+* No exemplo do arquivo playbook.yml, a receita de comandos irá rodar somente para o host tomcat
