@@ -23,5 +23,6 @@ Projeto simples para utilizar o ansible em servidores em docker. Isso não é um
 
 # Resultado esperado
 
-* Devem ter outras formas mais práticas de fazer isso, mas eu não gosto de usar o ansible via localhost na minha máquina.
-* O ideal é ter várias distribuições em containers para fazer testes
+* Você vai conseguir rodar suas receitas ansible e simular em várias distribuições em containers;
+* Devem ter outras formas mais práticas de fazer isso, mas eu não gosto de usar o ansible via localhost na minha máquina;
+* O ideal é ter várias distribuições em containers para fazer testes;
