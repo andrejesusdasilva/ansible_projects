@@ -16,7 +16,6 @@ Projeto simples para utilizar o ansible em servidores em docker. Isso não é um
 # Configurando o ansible
 * Configurar o arquivo de hosts com os ips dos containers;
 
-
 # Executando o ansible
 
 * export ANSIBLE_HOST_KEY_CHECKING=False
