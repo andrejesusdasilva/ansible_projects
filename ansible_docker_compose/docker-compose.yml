@@ -1,0 +1,15 @@
+version: '3'
+#https://unix.stackexchange.com/questions/459206/list-ip-tables-in-docker-container
+services:
+  ubuntu:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+        - '22'
+    privileged: true
+    volumes: 
+        - '/home/mtuser/.ssh/id_rsa.pub:/home/ansible/.ssh/id_rsa.pub'
+        - './authorized_keys:/home/ansible/.ssh/authorized_keys'
+
+      
